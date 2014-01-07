@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
       		redirect_to group_path(@group)
     	else
       		render :edit
+      	end
 	end
 
 	def destroy
