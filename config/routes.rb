@@ -53,4 +53,6 @@ Redforce::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get "hello" => "hello#index"
+  root to: "hello#index"
 end
