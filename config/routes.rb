@@ -54,5 +54,7 @@ Redforce::Application.routes.draw do
   #     resources :products
   #   end
   get "hello" => "hello#index"
+  get "greeting" => "hello#greeting"
+
   root to: "hello#index"
 end
