@@ -42,6 +42,8 @@ group  :production  do
 end
 
 gem 'bootstrap-sass' , '~> 3.0.3.0'
+
+gem 'simple_form' 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
