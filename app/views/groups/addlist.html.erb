@@ -1,0 +1,27 @@
+<div class="span12">
+    
+    
+ 
+    <h3>人力資源庫</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> ID </td>
+                <td> 介紹 </td>
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @groups.each do |group| %>
+            <tr>
+                <td> <%= group.id%></td>
+                <td> <%= group.title %> </td>
+                <td> <%= group.description %> </td>
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

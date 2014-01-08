@@ -56,6 +56,7 @@ Redforce::Application.routes.draw do
   resources :groups
   get "hello" => "hello#index"
   get "greeting" => "hello#greeting"
+  get "list" => "groups#addlist"
 
   root to: "hello#index"
 end

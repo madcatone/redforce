@@ -40,6 +40,10 @@ class GroupsController < ApplicationController
       		redirect_to groups_path
 	end
 
+	def addlist
+		@groups = Group.all
+	end
+
 	private
 
   	def group_params
