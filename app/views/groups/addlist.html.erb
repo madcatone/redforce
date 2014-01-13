@@ -9,6 +9,12 @@
                 <td> # </td>
                 <td> ID </td>
                 <td> 介紹 </td>
+                <td> 地點 </td>
+                <td> 主要出沒地 </td>
+                <td> 等級 </td>
+                <td> G+ </td>
+                <td> 附註 </td>
+                <td> 暱稱 </td>
             </tr>
         </thead>
 
@@ -18,6 +24,12 @@
                 <td> <%= group.id%></td>
                 <td> <%= group.title %> </td>
                 <td> <%= group.description %> </td>
+                <td> <%= group.location%></td>
+                <td> <%= group.mainloc%></td>
+                <td>Lv <%= group.level.to_i%></td>
+                <td> <%= group.gpname%></td>
+                <td> <%= group.comment%></td>
+                <td> <%= group.nickname%></td>
                 
             </tr>
         <% end %>

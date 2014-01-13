@@ -11,6 +11,12 @@
                 <td> # </td>
                 <td> ID </td>
                 <td> 介紹 </td>
+                <td> 地點 </td>
+                <td> 主要出沒地 </td>
+                <td> 等級 </td>
+                <td> G+ </td>
+                <td> 備註 </td>
+                <td> 暱稱 </td>
             </tr>
         </thead>
 
@@ -20,6 +26,12 @@
                 <td> # </td>
                 <td> <%= link_to(group.title, group_path(group)) %> </td>
                 <td> <%= group.description %> </td>
+                <td> <%= group.location%></td>
+                <td> <%= group.mainloc%></td>
+                <td>Lv <%= group.level.to_i%></td>
+                <td> <%= group.gpname%></td>
+                <td> <%= group.comment%></td>
+                <td> <%= group.nickname%></td>
                 <td> <%= link_to("Edit", edit_group_path(group), :class => "btn btn-mini" ) %><%= link_to("Delete", group_path(group), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" ) %></td>
             </tr>
         <% end %>
