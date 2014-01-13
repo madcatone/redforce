@@ -53,10 +53,10 @@ Redforce::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :groups
+  #resources :groups
   get "hello" => "hello#index"
   get "greeting" => "hello#greeting"
-  get "list" => "groups#addlist"
+  #get "list" => "groups#addlist"
 
   root to: "hello#index"
 end
