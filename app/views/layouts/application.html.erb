@@ -18,30 +18,54 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="greeting">Red-Force</a>
+          <a class="navbar-brand" href="../greeting">Red-Force</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="hello">Home</a></li>
-            <li><a href="./greeting">Greeting</a></li>
-            <li><a href="./list">List</a></li>
+            <li class="active"><a href="../hello">Home</a></li>
+            <li><a href="../greeting">Greeting</a></li>
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foods <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/foods">Food Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <% if current_user %>
+                <li><a href="../foods">Food Action</a></li>
+                <% end %>
+                <li><a href="../foodlist">Food List</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
               </ul>
             </li>
-            <li class="pull-right"><a href="./groups">Groups</a></li>
-            <li class="pull-right"><a href="./foods">Foods</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <% if current_user %>
+                <li><a href="../groups">Group Action</a></li>
+                <% end %>
+                <li><a href="../grouplist">Group List</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+              </ul>
+            </li>
+
           </ul>
+          <p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+ <!--  <%= current_user.created_at %> -->
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
         </div><!--/.nav-collapse -->
+
       </div>
     </div>
 

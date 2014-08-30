@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 	#before_filter :open_door , :except => [:index , :open_sesame , :close_sesame, :addlist]
 	#before_filter :open_door , :only => :open_sesame ,:only => :close_sesame
 	#before_filter :open_door, :open_sesame, :close_sesame, :only => [:index, :show, :new, :edit, :create]
+	before_filter :authenticate_user!
 	def open_door
 		#cookies[:open_sesame] == "1" ? cookies[:open_sesame] = "0" : cookies[:open_sesame] = "1"
 		if cookies[:open_sesame] == "1"
