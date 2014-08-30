@@ -1,4 +1,5 @@
 Redforce::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,11 +54,18 @@ Redforce::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :foods do
+    
+  end
+
+  resources :hello
+  get "hello" => "hello#index"
+  get "greeting" => "hello#greeting"
   resources :groups
   get "hello" => "hello#index"
   get "greeting" => "hello#greeting"
   get "list" => "groups#addlist"
   #get "groups" => "groups#index"
-
+  get "foodlist" => "foods#list"
   root to: "hello#index"
 end

@@ -1,0 +1,33 @@
+<div class="span12">
+    
+    
+    <p class="text-left"><a href="greeting" class="btn btn-success btn-lg" role="button">&laquo; 返回</a></p>
+    <h3>食物資源庫</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 食物名稱 </td>
+                <td> 價格 </td>
+                <td> 店家 </td>
+                <td> 種類 </td>
+  
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @foods.each do |food| %>
+            <tr>
+                <td> <%= food.id%></td>
+                <td> <%= food.foodname %> </td>
+                <td> <%= food.price %> </td>
+                <td> <%= food.store_id%></td>
+                <td> <%= food.foodtype%></td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

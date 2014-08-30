@@ -1,7 +1,12 @@
 <div class="jumbotron">
         <h1 class="text-center">你好！</h1>
         <p class="text-center">歡迎來到這裡！</p>
-        <p class="text-center"></p>
+        <p class="text-center">
+        <%=link_to("Login",new_user_session_path)%>  
+        	<%=link_to("SignUp",new_user_registration_path)%><br />
+        	<%=link_to("Logout",destroy_user_session_path,:method=>:delete)%>
+        </p>
 
-        <p class="text-center"><a href="list" class="btn btn-success btn-lg" role="button">更多訊息 &raquo;</a></p>
+        <p class="text-center"><a href="list" class="btn btn-success btn-lg" role="button">玩家例表 &raquo;</a></p>
+        <p class="text-center"><a href="foodlist" class="btn btn-success btn-lg" role="button">訂便當 &raquo;</a></p>
       </div>

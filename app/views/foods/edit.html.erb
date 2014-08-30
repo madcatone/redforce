@@ -1,0 +1,17 @@
+<div class="col-md-6">
+
+<h2>修改食物</h2>
+
+    <%= simple_form_for @food do |f| %>
+        食物名稱<%= f.input :foodname, :input_html => { :class => "form-control"} %>
+        價格<%= f.input :price, :input_html => { :class => "form-control"} %>
+        店家<%= f.input :store_id, :input_html => { :class => "form-control"}%>
+        種類<%= f.input :foodtype, :input_html => { :class => "form-control"}%>
+
+
+    <div class="form-group">
+        <%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+    </div>
+    
+    <% end %>
+</div>

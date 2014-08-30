@@ -1,0 +1,36 @@
+<div class="span12">
+    
+    <div class="group">
+        <%= link_to("New food", new_food_path , :class => "btn btn-mini btn-primary pull-left" ) %>
+    </div><br />
+ 
+    <h3>食物列表</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 中文 </td>
+                <td> 價格 </td>
+                <td> 店家 </td>
+                <td> 種類 </td>
+                <td></td>
+
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @foods.each do |food| %>
+            <tr>
+                <td> <%= food.id %>  </td>
+                <td> <%= link_to(food.foodname, food_path(food)) %> </td>
+                <td> <%= food.price %> </td>
+                <td> <%= food.store_id%></td>
+                <td> <%= food.foodtype%></td>
+    
+                <td> <%= link_to("Edit", edit_food_path(food), :class => "btn btn-mini" ) %><%= link_to("Delete", food_path(food), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" ) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>
