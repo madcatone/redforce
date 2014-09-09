@@ -1,0 +1,64 @@
+<div class="span12">
+    
+    <div class="group">
+        <%= link_to("New Journal", new_journal_path , :class => "btn btn-mini btn-primary pull-left" ) %>
+    </div><br />
+ 
+    <h3>發表期刊論文</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 作者 </td>
+                <td> 標題 </td>
+                <td> 期刊頁數 </td>
+                <td> 種類 </td>
+                <td></td>
+
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @journals_1.each do |j| %>
+            <tr>
+                <td> <%= j.id %>  </td>
+                <td> <%= j.author %> </td>
+                <td> <%= link_to(j.title, journal_path(j)) %> </td>
+                <td> <%= j.description%></td>
+                <td> <%= j.journal_type%></td>
+    
+                <td> <%= link_to("Edit", edit_journal_path(j), :class => "btn btn-mini" ) %><%= link_to("Delete", journal_path(j), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" ) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+    <h3>會議論文</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 作者 </td>
+                <td> 標題 </td>
+                <td> 期刊頁數 </td>
+                <td> 種類 </td>
+                <td></td>
+
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @journals_2.each do |j| %>
+            <tr>
+                <td> <%= j.id %>  </td>
+                <td> <%= j.author %> </td>
+                <td> <%= link_to(j.title, journal_path(j)) %> </td>
+                <td> <%= j.description%></td>
+                <td> <%= j.journal_type%></td>
+    
+                <td> <%= link_to("Edit", edit_journal_path(j), :class => "btn btn-mini" ) %><%= link_to("Delete", journal_path(j), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" ) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

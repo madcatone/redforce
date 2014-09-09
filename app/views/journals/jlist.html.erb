@@ -1,0 +1,33 @@
+<div class="span12">
+    
+    
+    <p class="text-left"><a href="greeting" class="btn btn-success btn-lg" role="button">&laquo; 返回</a></p>
+    <h3>期刊列表</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 標題 </td>
+                <td> 作者 </td>
+                <td> 期刊頁數 </td>
+                <td> 種類 </td>
+  
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @journals.each do |j| %>
+            <tr>
+                <td> <%= j.id%></td>
+                <td> <%= j.title %> </td>
+                <td> <%= j.author %> </td>
+                <td> <%= j.description%></td>
+                <td> <%= j.journal_type%></td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

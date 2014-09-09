@@ -1,5 +1,65 @@
 Redforce::Application.routes.draw do
   devise_for :users #, only: [:index, :show, :edit, :list]
+
+  namespace :dashboard do
+    resources :items do
+      get "xxxx" , :to => "items#index"
+      member do
+        get "item_history" , :to => 'items#item_history'
+      end
+      collection do
+        get 'item_detail' , :controller => 'items' , :action => 'item_detail'
+      end
+    end
+    root :to => "items#index"
+  end
+
+  resources :foods do
+    get "list" => "foods#list"
+    collection do
+      get 'list' , :controller => 'foods' , :action => 'list'
+    end
+    root :to => "foods#index"
+  end
+
+  resources :groups do
+    get "list" => "groups#list"
+    
+    collection do
+      get 'list' , :controller => 'groups' , :action => 'addlist'
+    end
+    
+    #member do
+    #  get 'list' , :to => 'groups#list'
+    #end
+    root :to => "groups#index"
+  end
+  resources :journals do
+    get 'list' => "journals#jlist"
+    collection do
+      get 'list' , :controller => 'journals' , :action => 'jlist'
+    end
+  end
+  resources :profiles do
+    get 'list' => "profiles#plist"
+    collection do
+      get 'list' , :controller => 'profiles' , :action => 'plist'
+      get 'greeting' , :controller => 'profiles' , :action => 'greeting'
+    end
+    #root :to => "profiles#greeting"
+  end
+
+  resources :hello
+  get "hello" => "hello#index"
+  get "greeting" => "hello#greeting"
+  #resources :groups , only: [:index, :show, :edit, :list, :new, :destroy, :update]
+  #get "hello" => "hello#index"
+  #get "greeting" => "hello#greeting"
+  #get "grouplist" => "groups#addlist"
+  #get "groups" => "groups#index"
+  #get "foodlist" => "foods#list"
+  root to: "hello#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,18 +114,5 @@ Redforce::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :foods do
-    
-  end
 
-  resources :hello
-  get "hello" => "hello#index"
-  get "greeting" => "hello#greeting"
-  resources :groups , only: [:index, :show, :edit, :list, :new, :destroy, :update]
-  get "hello" => "hello#index"
-  get "greeting" => "hello#greeting"
-  get "grouplist" => "groups#addlist"
-  #get "groups" => "groups#index"
-  get "foodlist" => "foods#list"
-  root to: "hello#index"
 end

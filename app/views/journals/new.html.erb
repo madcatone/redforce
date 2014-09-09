@@ -1,0 +1,16 @@
+<div class="col-md-6">
+
+<h2>新增期刊</h2>
+
+    <%= simple_form_for @journal do |f| %>
+        標題<%= f.input :title, :input_html  => { :class => "form-control"} %>
+        作者<%= f.input :author, :input_html => { :class => "form-control"} %>
+        期刊頁數<%= f.input :description, :input_html => { :class => "form-control"}%>
+        種類<%= f.input :journal_type, :input_html => { :class => "form-control"}%>
+        老師<%= f.input :profile_id, :input_html => { :class => "form-control"} %><br />
+    <div class="form-group">
+        <%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+    </div>
+    
+    <% end %>
+</div>

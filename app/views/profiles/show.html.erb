@@ -1,0 +1,142 @@
+<div class="col-md">
+
+    <div class="group">
+        <%= link_to("Edit", edit_profile_path(@profile) , :class => "btn btn-mini btn-primary pull-right" ) %>
+   </div>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>.</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+<!--         <thead>
+            <tr>
+                <td> 教師姓名 </td>
+                <td> 職稱 </td>
+                <td> Email </td>
+                <td> 分機號碼 </td>
+                <td> 辦公室 </td>
+                <td> 實驗室 </td>
+  
+            </tr>
+        </thead> -->
+        <tbody>
+        <div class="col-lg-2">
+        <% if @profile.id == 1 %>
+        	<%= image_tag "FcuPic_cychen.jpg", :class => "img-rounded", :style => "width:100%" %>
+        <% end %>
+        <% if @profile.id == 2 %>
+        	<%= image_tag "FcuPic_dschen.jpg", :class => "img-rounded", :style => "width:100%" %>
+        <% end %>
+        <% if @profile.id == 3 %>
+        	<%= image_tag "FcuPic_ywwang.jpg", :class => "img-rounded", :style => "width:100%" %>
+        <% end %>
+        </div><br />
+        <label class="col-sm-2 control-label">教師姓名</label>
+        <label class="col-sm-8"><%= @profile.name %></label>
+        <label class="col-sm-2 control-label">職稱</label>
+        <label class="col-sm-8"><%= @profile.title %></label>
+        <label class="col-sm-2 control-label">Email</label>
+        <label class="col-sm-8"><%= @profile.email %></label>
+        <label class="col-sm-2 control-label">分機號碼</label>
+        <label class="col-sm-8"><%= @profile.tel %></label>
+        <label class="col-sm-2 control-label">辦公室</label>
+        <label class="col-sm-8"><%= @profile.office_room %></label>
+        <label class="col-sm-2 control-label">實驗室</label>
+        <label class="col-sm-8"><%= @profile.lab_room %></label>
+<!--         	<tr>
+        		<td> 教師姓名 </td>
+                <td> <%= @profile.name %> </td>
+            </tr>
+            <tr>
+            	<td> 職稱 </td>
+                <td> <%= @profile.title %> </td>
+            </tr>
+            <tr>
+            	<td> Email </td>
+                <td> <%= @profile.email %> </td>
+            </tr>
+            <tr>
+            	<td> 分機號碼 </td>
+                <td> <%= @profile.tel %> </td>
+            </tr>
+            <tr>
+            	<td> 辦公室 </td>
+                <td> <%= @profile.office_room %> </td>
+            </tr>
+            <tr>
+            	<td> 實驗室 </td>
+                <td> <%= @profile.lab_room %> </td>
+            </tr> -->
+        </tbody>
+  </table>
+  <p>.</p>
+</div>
+<%= render :partial => "edu", :locals => { :f => @profile.id } %>
+<!-- <h2>教師姓名 <%= @profile.name %> </h2>
+<p>職稱 <%= @profile.title %> </p>
+<p>email <%= @profile.email %> </p>
+<p>分機號碼 <%= @profile.tel %> </p>
+<p>辦公室 <%= @profile.office_room %> </p>
+<p>實驗室 <%= @profile.lab_room %> </p>-->
+<h3>發表期刊論文</h3> 
+<%= link_to("New Journal", new_journal_path , :class => "btn btn-mini btn-primary pull-left" ) %>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 標題 </td>
+                <td> 作者 </td>
+                <td> 期刊頁數 </td>
+                <td> 種類 </td>
+  
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @journals_1.each do |j| %>
+            <tr>
+                <td> <%= j.id%></td>
+                <td> <%= j.title %> </td>
+                <td> <%= j.author %> </td>
+                <td> <%= j.description%></td>
+                <td> <%= j.journal_type%></td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+<h3>會議論文</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 標題 </td>
+                <td> 作者 </td>
+                <td> 期刊頁數 </td>
+                <td> 種類 </td>
+  
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @journals_2.each do |j| %>
+            <tr>
+                <td> <%= j.id%></td>
+                <td> <%= j.title %> </td>
+                <td> <%= j.author %> </td>
+                <td> <%= j.description%></td>
+                <td> <%= j.journal_type%></td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+
+</div>

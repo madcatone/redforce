@@ -1,0 +1,19 @@
+<div class="col-md-6">
+
+<h2>修改Profile</h2>
+
+    <%= simple_form_for @profile do |f| %>
+        教師姓名<%= f.input :name, :input_html => { :class => "form-control"} %>
+        職稱<%= f.input :title, :input_html => { :class => "form-control"} %>
+        email<%= f.input :email, :input_html => { :class => "form-control"}%>
+        分機號碼<%= f.input :tel, :input_html => { :class => "form-control"}%>
+        辦公室<%= f.input :office_room, :input_html => { :class => "form-control"}%>
+        實驗室<%= f.input :lab_room, :input_html => { :class => "form-control"}%>
+
+
+    <div class="form-group">
+        <%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+    </div>
+    
+    <% end %>
+</div>

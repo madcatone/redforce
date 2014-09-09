@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140830113125) do
+ActiveRecord::Schema.define(version: 20140907060748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,28 @@ ActiveRecord::Schema.define(version: 20140830113125) do
     t.string   "mainloc"
     t.string   "comment"
     t.string   "nickname"
+  end
+
+  create_table "journals", force: true do |t|
+    t.integer  "journal_type"
+    t.text     "description"
+    t.text     "title"
+    t.string   "author"
+    t.integer  "status",       default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "profile_id"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "tel"
+    t.string   "office_room"
+    t.string   "lab_room"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

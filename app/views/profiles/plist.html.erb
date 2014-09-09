@@ -1,0 +1,37 @@
+<div class="span12">
+    
+    
+    <p class="text-left"><a href="greeting" class="btn btn-success btn-lg" role="button">&laquo; 返回</a></p>
+    <h3>教師列表</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 教師姓名 </td>
+                <td> 職稱 </td>
+                <td> email </td>
+                <td> 分機號碼 </td>
+                <td> 辦公室 </td>
+                <td> 實驗室 </td>
+  
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @profiles.each do |j| %>
+            <tr>
+                <td> <%= j.id%></td>
+                <td> <%= link_to(j.name, profile_path(j)) %> </td>
+                <td> <%= j.title %> </td>
+                <td> <%= j.email %></td>
+                <td> <%= j.tel %></td>
+                <td> <%= j.office_room %></td>
+                <td> <%= j.lab_room %></td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+</div>

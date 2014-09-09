@@ -8,8 +8,12 @@
 </head>
 <body>
 
+
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="row">
+    <div class="col-xs-12 col-md-12"><%#= image_tag "VLSI_Lab_topbanner.jpg", :class => "img-rounded", :style => "width:100%" %></div>
+    </div>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,14 +28,15 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="../hello">Home</a></li>
             <li><a href="../greeting">Greeting</a></li>
-            
+            <li><a href="../profiles/greeting">Profile</a></li>
+            <li><a href="../journals">Journal</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foods <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% if current_user %>
                 <li><a href="../foods">Food Action</a></li>
                 <% end %>
-                <li><a href="../foodlist">Food List</a></li>
+                <li><a href="../foods/list">Food List</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">link 1</a></li>
@@ -44,7 +49,7 @@
                 <% if current_user %>
                 <li><a href="../groups">Group Action</a></li>
                 <% end %>
-                <li><a href="../grouplist">Group List</a></li>
+                <li><a href="../groups/list">Group List</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">link 1</a></li>
