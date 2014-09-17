@@ -52,13 +52,24 @@ Redforce::Application.routes.draw do
   resources :hello
   get "hello" => "hello#index"
   get "greeting" => "hello#greeting"
+  get "portfolio" => "hello#portfolio"
+  get "asp" => "hello#asp"
+  get "asp_1" => "hello#asp_1"
+  get "asp_2" => "hello#asp_2"
+  get "asp_3" => "hello#asp_3"
+  get "jsp" => "hello#jsp"
+  get "jsp_1" => "hello#jsp_1"
+  get "jsp_2" => "hello#jsp_2"
+  get "jsp_3" => "hello#jsp_3"
+  get "other" => "hello#other"
+  get "mobile" => "hello#mobile"
   #resources :groups , only: [:index, :show, :edit, :list, :new, :destroy, :update]
   #get "hello" => "hello#index"
   #get "greeting" => "hello#greeting"
   #get "grouplist" => "groups#addlist"
   #get "groups" => "groups#index"
   #get "foodlist" => "foods#list"
-  root to: "hello#index"
+  root to: "hello#portfolio"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

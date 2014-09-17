@@ -1,0 +1,2 @@
+class MostsController < ApplicationController
+end

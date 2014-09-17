@@ -1,43 +1,47 @@
 <div class="jumbotron">
-        <%= image_tag "VLSI_Lab_topbanner.jpg", :class => "img-rounded", :style => "width:100%" %>
+        <%#= image_tag "VLSI_Lab_topbanner.jpg", :class => "img-rounded", :style => "width:100%" %>
+        <img src="https://dl.dropboxusercontent.com/u/10288003/VLSI_Lab_topbanner.jpg" class="img-rounded" style="width:100%" />
         <h1 class="text-center">你好！</h1>
-        <p class="text-center">歡迎來到這裡！</p>
-        <p class="text-center">
+        <p class="text-center">歡迎來到VLSI Lab</p>
+        <p class="text-center">本實驗室由三位老師共同指導</p>
+        <p class="text-center">位於資電館2F 246室</p>
+<!--         <p class="text-center">
         <%=link_to("Login",new_user_session_path)%>  
         	<%=link_to("SignUp",new_user_registration_path)%><br />
         	<%=link_to("Logout",destroy_user_session_path,:method=>:delete)%>
-        </p>
-
-        <p class="text-center"><a href="../profiles/" class="btn btn-success btn-lg" role="button">教師總表 &raquo;</a></p>
-        <p class="text-center"><a href="foodlist" class="btn btn-success btn-lg" role="button">訂便當 &raquo;</a></p>
+        </p> -->
+        <p class="text-center"><a href="#next" class="btn btn-success btn-lg" role="button">找尋老師 &raquo;</a>
+        <!-- <a href="../profiles/" class="btn btn-success btn-lg" role="button">教師總表 &raquo;</a></p> -->
+        <!-- <p class="text-center"><a href="../profiles/" class="btn btn-success btn-lg" role="button">教師總表 &raquo;</a></p> -->
+        <!-- <p class="text-center"><a href="foodlist" class="btn btn-success btn-lg" role="button">訂便當 &raquo;</a></p> -->
 <div class="row">
   <div class="col-sm-3 col-md-4">
     <div class="thumbnail">
       <div class="caption">
-      <%= image_tag "FcuPic_cychen.jpg", :class => "img-rounded", :style => "width:100%" %>
-        <h3>陳啟鏘</h3>
-        <p>...</p>
-        <p><a href="../profiles/1" class="btn btn-primary" role="button">查看</a> </p>
+      <%#= image_tag "FcuPic_cychen.jpg", :class => "img-rounded", :style => "width:100%" %>
+      <img src="https://dl.dropboxusercontent.com/u/10288003/FcuPic_cychen.jpg" class="img-rounded" style="width:100%" />
+        <h3 class="text-center" id="next">陳啟鏘 老師</h3>
+        <p class="text-center"><a href="../profiles/1" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-info-sign"></span> 簡介</a></p>
       </div>
     </div>
   </div>
     <div class="col-sm-3 col-md-4">
     <div class="thumbnail">
       <div class="caption">
-      <%= image_tag "FcuPic_dschen.jpg", :class => "img-rounded", :style => "width:100%" %>
-        <h3>陳德生</h3>
-        <p>...</p>
-        <p><a href="../profiles/2" class="btn btn-warning" role="button">查看</a></p>
+      <%#= image_tag "FcuPic_dschen.jpg", :class => "img-rounded", :style => "width:100%" %>
+      <img src="https://dl.dropboxusercontent.com/u/10288003/FcuPic_dschen.jpg" class="img-rounded" style="width:100%" />
+        <h3 class="text-center">陳德生 老師</h3>
+        <p class="text-center"><a href="../profiles/2" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-info-sign"></span> 簡介</a></p>
       </div>
     </div>
   </div>
   <div class="col-sm-3 col-md-4">
     <div class="thumbnail">
       <div class="caption">
-      <%= image_tag "FcuPic_ywwang.jpg", :class => "img-rounded", :style => "width:100%" %>
-        <h3>王益文</h3>
-        <p>...</p>
-        <p><a href="../profiles/3" class="btn btn-success" role="button">查看</a> </p>
+      <%#= image_tag "FcuPic_ywwang.jpg", :class => "img-rounded", :style => "width:100%" %>
+      <img src="https://dl.dropboxusercontent.com/u/10288003/FcuPic_ywwang.jpg" class="img-rounded" style="width:100%" />
+        <h3 class="text-center">王益文 老師</h3>
+        <p class="text-center"><a href="../profiles/3" class="btn btn-success" role="button"><span class="glyphicon glyphicon-info-sign"></span> 簡介</a></p>
       </div>
     </div>
   </div>

@@ -11,8 +11,8 @@ class ProfilesController < ApplicationController
 	end
 	def show
 		@profile = p = Profile.find(params[:id])
-		@journals_1 = p.journals.where("journal_type = 1")
-		@journals_2 = p.journals.where("journal_type = 2")
+		@journals_1 = p.journals.where("journal_type = 1").order('created_at desc')
+		@journals_2 = p.journals.where("journal_type = 2").order('created_at desc')
 	end	
 	def new
 		@profile = Profile.new

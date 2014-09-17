@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Red-Force</title>
+  <title>RedForce</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -22,15 +22,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../greeting">Red-Force</a>
+          <a class="navbar-brand" href="../">RedForce</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../hello">Home</a></li>
-            <li><a href="../greeting">Greeting</a></li>
+            <!-- <li class="active"><a href="../hello">Home</a></li> -->
+            <li><a href="../portfolio">Portfolio</a></li>
             <li><a href="../profiles/greeting">Profile</a></li>
             <li><a href="../journals">Journal</a></li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foods <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% if current_user %>
@@ -42,8 +42,9 @@
                 <li><a href="#">link 1</a></li>
                 <li><a href="#">link 2</a></li>
               </ul>
-            </li>
-            <li class="dropdown">
+            </li> -->
+            
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% if current_user %>
@@ -55,7 +56,7 @@
                 <li><a href="#">link 1</a></li>
                 <li><a href="#">link 2</a></li>
               </ul>
-            </li>
+            </li> -->
 
           </ul>
           <p class="navbar-text pull-right">
