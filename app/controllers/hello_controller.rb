@@ -40,5 +40,8 @@ class HelloController < ApplicationController
 
   	def mobile
   	end
+
+  	def aboutme
+  	end
   	protect_from_forgery with: :exception
 end

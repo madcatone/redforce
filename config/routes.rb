@@ -63,6 +63,7 @@ Redforce::Application.routes.draw do
   get "jsp_3" => "hello#jsp_3"
   get "other" => "hello#other"
   get "mobile" => "hello#mobile"
+  get "aboutme" => "hello#aboutme"
   #resources :groups , only: [:index, :show, :edit, :list, :new, :destroy, :update]
   #get "hello" => "hello#index"
   #get "greeting" => "hello#greeting"
