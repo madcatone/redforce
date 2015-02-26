@@ -40,6 +40,12 @@ Redforce::Application.routes.draw do
       get 'list' , :controller => 'journals' , :action => 'jlist'
     end
   end
+  resources :problems do
+    get 'list' => "problems#list"
+    collection do
+      get 'list' , :controller => 'problems' , :action => 'list'
+    end
+  end
   resources :profiles do
     get 'list' => "profiles#plist"
     collection do

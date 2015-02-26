@@ -1,0 +1,13 @@
+<div class="col-md">
+
+    <div class="group">
+        <%= link_to("Edit", edit_journal_path(@journal) , :class => "btn btn-mini btn-primary pull-right" ) %>
+   </div>
+<h2>Journal</h2>
+<p>標題 <%= @journal.title %> </p>
+<p>作者 <%= @journal.author %> </p>
+<p>期刊頁數 <%= @journal.description %> </p>
+<p>種類 <%= @journal.journal_type %> </p>
+<p>老師 <%= @journal.profile_id %> </p>
+
+</div>

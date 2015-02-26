@@ -1,0 +1,31 @@
+<div class="span12">
+    
+
+ 
+    <h3>發表期刊論文</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> # </td>
+                <td> 作者 </td>
+                <td> 標題 </td>
+                <td></td>
+
+            </tr>
+        </thead>
+
+    <tbody>
+        <% @problem.each do |j| %>
+            <tr>
+                <td> <%= j.index %>  </td>
+                <td> <%= j.Content %> </td>
+                <td> <%= j.Tran_Content %></td>
+                <td> <%= j.Type %></td>
+
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+    
+
+</div>
