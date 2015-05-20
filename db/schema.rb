@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124071543) do
+ActiveRecord::Schema.define(version: 20150301175517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,27 @@ ActiveRecord::Schema.define(version: 20150124071543) do
     t.integer  "price"
     t.integer  "store_id"
     t.integer  "foodtype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gp_feedbacks", id: false, force: true do |t|
+    t.integer  "index"
+    t.string   "name"
+    t.integer  "id"
+    t.string   "star"
+    t.string   "language"
+    t.string   "software"
+    t.string   "phone"
+    t.datetime "comment_time"
+    t.text     "comment"
+    t.text     "reply"
+    t.datetime "reply_time"
+    t.text     "tran_comment"
+    t.string   "catalog"
+    t.string   "gp_type"
+    t.string   "gp_type_2"
+    t.text     "g_comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

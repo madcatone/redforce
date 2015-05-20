@@ -44,6 +44,9 @@ Redforce::Application.routes.draw do
     get 'list' => "problems#list"
     collection do
       get 'list' , :controller => 'problems' , :action => 'list'
+      get 'cons' , :controller => 'problems' , :action => 'cons'
+      get 'pros' , :controller => 'problems' , :action => 'pros'
+      get 'spam' , :controller => 'problems' , :action => 'spam'
     end
   end
   resources :profiles do
@@ -54,6 +57,8 @@ Redforce::Application.routes.draw do
     end
     #root :to => "profiles#greeting"
   end
+
+  resources :gp_feedbacks
 
   resources :hello
   get "hello" => "hello#index"

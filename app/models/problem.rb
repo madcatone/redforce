@@ -1,7 +1,7 @@
-class OtherProblem < ActiveRecord::Base
-	#establish_connection "problem_database_development"
-	#self.table_name = "2015-01-20_problem_mail_cons"
+class Problem < ActiveRecord::Base
+	establish_connection "problem_database_development"
+	self.table_name = "problem_mail"
 end
 
-class Problem < OtherProblem
-end
+#class Problem < OtherProblem
+#end

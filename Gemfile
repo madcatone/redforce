@@ -48,6 +48,11 @@ gem 'bootstrap-sass' , '~> 3.0.3.0'
 gem 'simple_form' 
 
 gem 'devise'
+
+## Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.0.6'
+
+gem 'mixpanel-ruby'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -56,6 +61,9 @@ gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+# Use POW
+gem 'powder'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
