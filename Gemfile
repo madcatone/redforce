@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,13 +33,13 @@ group :doc do
 end
 
 group  :development  do 
-  gem  'sqlite3' ,  '1.3.8' 
+#  gem  'sqlite3' 
 end
 
 group  :production  do 
   gem  'pg' ,  '0.15.1' 
   gem  'rails_12factor' ,  '0.0.2' 
-  gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+  gem 'mongoid', github: 'mongoid/mongoid'
   gem 'bson_ext'
 end
 
