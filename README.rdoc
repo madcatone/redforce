@@ -1,3 +1,47 @@
 == README
 
 試玩Rails
+# encoding: UTF-8
+=model
+  # 限制文章標題與內容不為空
+  validates :title, :content, presence: true
+  # 限制需勾選同意使用條款EULA
+  validates :terms, acceptance: true
+  # 重複輸入密碼需相同
+  validates :password, :confirmation: true
+  # 範圍之外
+  validates :username, exclusion: {in: %w[admin superuser]}
+  # 範圍之內
+  validates :age, inclusion: {in: 0..9}
+  # 正規表達式
+  validates :email, format:{
+    with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  }
+  # 字串長度 
+  validates :first_name, length: {maxinum: 30}
+  # 必須是數字
+  validates :age, numericality: true
+  # 數字大於20
+  validates :age, numericality: {greater_than: 20}
+  # 不能為空
+  validates :username, presence: true
+  # 不能重複
+  validates :username, uniqueness: true
+  # 自定驗證
+  validate :title_must_start_with_x
+  def title_must_start_with_x
+    unless title.to_s.start_with? 'X'
+      errors.add(:title, 'must start with "X"')
+    end
+  end
+  # Callback - content為空則填入title 
+  before_validation :set_content_from_title
+  def set_content_from_title
+    self.content = title if content.blank?
+  end 
+  # 多對多
+  has_and_belongs_to_many
+  # 資料表明稱不一致
+  self.table_name = :posts
+  # 外鍵名稱不一致 User -> Author 
+  belongs_to :author, class_name: 'User', foreign_key: :user_id
