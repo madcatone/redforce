@@ -45,3 +45,14 @@
   self.table_name = :posts
   # 外鍵名稱不一致 User -> Author 
   belongs_to :author, class_name: 'User', foreign_key: :user_id
+  # 關連資料表總和
+  all = []
+  all = self.comments.collect(&:user_id)
+  all.uniq # 
+  # 只取出單一欄位（並反序取前六）
+  Journal.all.map{|t| t.title}.reverse.take(6)
+
+class Settings < Settingslogic
+  source "#{Rails.root}/config/settings.yml"
+  namespace Rails.env
+end 
